@@ -2,9 +2,6 @@
 
 gemini cliでの並行開発
 
-[gemini cli repo](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#quickstart)
-[referenced note](https://zenn.dev/schroneko/articles/gemini-cli-tutorial)
-
 
 # install
 
@@ -55,15 +52,18 @@ Use MCP servers to integrate your local system tools with your enterprise collab
 
 
 ## git worktree
+
+```bash
 open -na Terminal
 
-git worktree add -b feature/frontend ../frontend main
-git worktree add -b feature/backend ../backend main
-git worktree add -b feature/frontend ../frontend main
-git worktree add -b feature/frontend ../frontend main
-git worktree add src/notifier/ -b feat/notifier
+git worktree add src/fronend main -b feat/frontend
+git worktree add src/notifier main -b feat/notifier
+git worktree add src/trend-api main -b feat/trend-api
+git worktree add src/trend-crawler main -b feat/trend-crawler
+git worktree add src/trend-db main -b feat/trend-db
 
 git worktree remove ../frontend
+```
 
 # 並行開発
 
@@ -71,6 +71,8 @@ git worktree remove ../frontend
 - 要件をもとに設計書を作成して
 - 設計書に、機能仕様、IF仕様、シーケンスダイアグラム（Mermaidで作成）を追記して
 
-- 
+
 # reference
-[claude](https://www.wantedly.com/companies/wantedly/post_articles/981006?source=ranking)
+[gemini cli repo](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#quickstart)
+[gemini cli note](https://zenn.dev/schroneko/articles/gemini-cli-tutorial)
+[pallel dev with claude](https://www.wantedly.com/companies/wantedly/post_articles/981006?source=ranking)
