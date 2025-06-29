@@ -15,6 +15,13 @@
 
 ## Architecture
 - Kubernetes上でマイクロサービスを構築する
-- 一つのマイクロサービスは、一つのsrc/{feature}フォルダ配下でだけ作業を行うこと
-- Dev環境は、src/{feature}フォルダに、DockerfileとDockercomposeで準備すること
-- .gitignoreや.envなど必要なファイルは予め作成してください
+- 各マイクロサービス間はAPIで通信し、疎結合であること
+- KustomizeでManifestの環境分離を行うこと
+- Github actionsでCICDを構築すること
+- Bazelを利用してコンテナのビルドを高速化すること
+- Git feature flowを採用すること
+- src/{feature}フォルダに、DockerfileとDockercomposeを準備し、ローカルPCで開発を行うこと
+- 各マイクロサービスは、src/{feature}フォルダに対応する。そのフォルダだけで開発を完結できること
+
+## Others
+- src/{feature}フォルダに、.gitignoreや.envなど必要なファイルは予め作成してください
